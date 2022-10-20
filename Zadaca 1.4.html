@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Додавање на текст во jQuery</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $("document").ready(function(){
+        $("#prv,#vtor").on("mousemove",onMouseOver);
+        $("#prv,#vtor").on("mouseleave",onMouseLeave);
+    });
+    function onMouseOver(e){
+        $("#prv,#vtor").text(e.pageX + ", " + e.pageY);
+    }
+     function onMouseLeave(e){
+        $("#prv,#vtor").text( "mouse has left" );
+    }
+    </script>
+    <style>
+        
+        #prv{
+            background:lightgray;
+            width:150px;
+            height: 100px;
+            border: solid 2px black;
+            float: left;
+            margin-right: 5px;
+        }
+        #vtor{
+            background:lightblue;
+            width:150px;
+            height: 100px;
+            border: solid 2px black;
+            float: left;
+        }
+    
+    </style>
+</head>
+<body>
+
+    
+    
+<div id="prv"></div>
+<div id="vtor"></div>
+</body>
+</html>

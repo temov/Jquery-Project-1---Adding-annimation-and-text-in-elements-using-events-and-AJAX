@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Додавање на текст во jQuery</title>
+    <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $("document").ready(function(){
+        $("#cetvrt").click(loadHTMLFour);
+        $("#cetvrt").click(getContentFour);
+        $("#tret").click(loadHTMLThree);
+        $("#tret").click(getContentThree);
+        $("#vtor").click(loadHTMLTwo);
+        $("#vtor").click(getContentTwo);
+        $("#prv").click(loadHTMLOne);
+        $("#prv").click(getContentOne);
+    });
+    function getContentFour(){
+        $.ajax("zadaca 1.6.4.html",
+               {success:setContentFour, type:"GET", dataType:"html"});    
+    }
+    function getContentThree(){
+        $.ajax("zadaca 1.6.3.html",
+               {success:setContentThree, type:"GET", dataType:"html"});    
+    }
+    function getContentTwo(){
+        $.ajax("zadaca 1.6.2.html",
+               {success:setContentTwo, type:"GET", dataType:"html"});    
+    }
+    function getContentOne(){
+        $.ajax("zadaca 1.6.1.html",
+               {success:setContentOne, type:"GET", dataType:"html"});    
+    }
+     function setContentFour(data,status,jqxhr){
+        $("#cetvrt").html(data);
+    }
+    function setContentThree(data,status,jqxhr){
+        $("#tret").html(data);
+    }
+    function setContentTwo(data,status,jqxhr){
+        $("#vtor").html(data);
+        
+    }function setContentOne(data,status,jqxhr){
+        $("#prv").html(data);
+    }
+    
+    function loadHTMLOne(){
+       $("#prv").load("zadaca 1.6.1.html");
+} 
+    function loadHTMLTwo(){
+       $("#vtor").load("zadaca 1.6.2.html");
+} 
+    function loadHTMLThree(){
+       $("#tret").load("zadaca 1.6.3.html");
+}
+    function loadHTMLFour(){
+       $("#cetvrt").load("zadaca 1.6.4.html");
+}
+    </script>
+    <style>
+        
+        #prv,#vtor,#tret,#cetvrt{
+            background:lightgray;
+            width:150px;
+            height: 100px;
+            border: solid 2px black;
+            float: left;
+            margin-right:5px;
+            
+        }
+    
+    </style>
+</head>
+<body> 
+<div id="prv"></div>
+<div id="vtor"></div>
+<div id="tret"></div>
+<div id="cetvrt"></div>
+</body>
+</html>
